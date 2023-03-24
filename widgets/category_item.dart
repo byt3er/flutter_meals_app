@@ -32,6 +32,13 @@ class CategoryItem extends StatelessWidget {
     // slides in or if it should basically be a full screen overlay rather
     // <settings> we become important later.
     // same for <maintainState>
+
+    // ****** NOTE ***************
+    // every standalone widget which you load through routing, which
+    // you navigate to withe Navigator needs a scaffold widget.
+    // Because it adds the background, the appBar and also in general,
+    // connects the widget to our material app and to the theme setup there,
+    // to the fonts and so on.
     Navigator.of(ctx).pushNamed(CategoryMealsScreen.routeName, arguments: {
       'id': id,
       'title': title,

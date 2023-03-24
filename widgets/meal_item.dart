@@ -55,12 +55,17 @@ class MealItem extends StatelessWidget {
   }
 
   void selectMeal(BuildContext context) {
+    // ****** NOTE ***************
+    // every standalone widget which you load through routing, which
+    // you navigate to withe Navigator needs a scaffold widget.
+    // Because it adds the background, the appBar and also in general,
+    // connects the widget to our material app and to the theme setup there,
+    // to the fonts and so on.
+    
     // go to the mealDetailScreen()
     Navigator.of(context).pushNamed(
       MealDetailScreen.routeName,
-      arguments: {
-        id: id,
-    }
+      arguments: id,
     );
   }
 
